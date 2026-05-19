@@ -13,7 +13,7 @@ def test_get_all_products():
     response = client.get(url)
     
     assert response.status_code == status.HTTP_200_OK
-    assert response.data[0]['title'] == product.title
+    assert response.data['results'][0]['title'] == product.title
 
 @pytest.mark.django_db
 def test_create_product():
